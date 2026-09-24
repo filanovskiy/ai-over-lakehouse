@@ -9,7 +9,7 @@ shared read-only connection to the existing Oracle Operations database. This
 is the only lab performed as ADMIN.
 
 The Azure and Databricks credentials are deliberately not created here. They
-belong to `PEAKGEAR_USER` and will be created through Data Studio in Lab 3.
+belong to PEAKGEAR&#95;USER and will be created through Data Studio in Lab 3.
 
 ### Objectives
 
@@ -18,7 +18,7 @@ In this lab, you will:
 * create and grant the least-privileged PeakGear participant;
 * create the public read-only Operations database link;
 * produce the non-secret Data Studio URL required by Codex; and
-* allow `PEAKGEAR_USER`, not `ADMIN`, to reach the Databricks OAuth endpoint.
+* allow PEAKGEAR&#95;USER, not `ADMIN`, to reach the Databricks OAuth endpoint.
 
 ### Prerequisites
 
@@ -36,19 +36,19 @@ In this lab, you will:
 3. Read the verification query before every create block. Run a create block
    only when its check shows that the object is absent.
 4. Replace the five placeholders supplied in the private handout:
-   `STRONG_LAB_PASSWORD`, `PEAKGEAR_OPS_PASSWORD`, `OPERATIONS_ADB_HOST`,
-   `OPERATIONS_SERVICE_NAME`, and `DATABRICKS_WORKSPACE_HOST`.
+   STRONG&#95;LAB&#95;PASSWORD, PEAKGEAR&#95;OPS&#95;PASSWORD, OPERATIONS&#95;ADB&#95;HOST,
+   OPERATIONS&#95;SERVICE&#95;NAME, and DATABRICKS&#95;WORKSPACE&#95;HOST.
 5. Run the script in order.
 
 The script performs four business outcomes:
 
-* `PEAKGEAR_USER` gets only the privileges needed to own views and Analytic
+* PEAKGEAR&#95;USER gets only the privileges needed to own views and Analytic
   Views in this lab.
-* The shared `PEAKGEAR_OPERATIONS_LINK` lets the participant read operational
+* The shared PEAKGEAR&#95;OPERATIONS&#95;LINK lets the participant read operational
   return events without receiving the Operations password.
-* The `ADP_URL` query returns the single non-secret URL that Codex needs later.
+* The ADP&#95;URL query returns the single non-secret URL that Codex needs later.
 * The Databricks network ACL is granted to the literal database principal
-  `PEAKGEAR_USER`. Never replace it with `CURRENT_USER` while signed in as `ADMIN`.
+  PEAKGEAR&#95;USER. Never replace it with CURRENT&#95;USER while signed in as `ADMIN`.
 
 ## Task 2: Verify the setup
 
@@ -60,7 +60,7 @@ SELECT COUNT(*) AS operational_return_events
 FROM customer_return_events@peakgear_operations_link;
 ~~~
 
-Copy the `ADP_URL` result. It is the **Lab Data Studio URL**. Keep it available
+Copy the ADP&#95;URL result. It is the **Lab Data Studio URL**. Keep it available
 for Lab 4; it is safe to share with the participant. Do not share the
 Operations password, Azure SAS token, or Databricks OAuth secret.
 
@@ -68,14 +68,14 @@ Operations password, Azure SAS token, or Databricks OAuth secret.
 
 You have all of the following:
 
-* a `PEAKGEAR_USER` account with the listed grants;
-* a working public `PEAKGEAR_OPERATIONS_LINK`;
+* a PEAKGEAR&#95;USER account with the listed grants;
+* a working public PEAKGEAR&#95;OPERATIONS&#95;LINK;
 * one copied Lab Data Studio URL; and
-* an ACL for `PEAKGEAR_USER` to the Databricks OAuth host on port 443.
+* an ACL for PEAKGEAR&#95;USER to the Databricks OAuth host on port 443.
 
 ## Task 3: Start a new participant session
 
-**Sign out of Data Studio completely, then sign back in as `PEAKGEAR_USER`.**
+**Sign out of Data Studio completely, then sign back in as PEAKGEAR&#95;USER.**
 A browser refresh is not enough: it can retain the ADMIN database session and
 its privileges.
 

@@ -35,13 +35,13 @@ lab handout:
 
 | Credential | Purpose | Value type |
 |---|---|---|
-| `ADLS_PEAKGEAR_DATA` | Read Iceberg files in Azure Blob Storage | Read-only Azure SAS |
-| `DBX_PEAKGEAR_OAUTH` | Obtain renewable Unity Catalog access tokens | Databricks OAuth client |
+| ADLS&#95;PEAKGEAR&#95;DATA | Read Iceberg files in Azure Blob Storage | Read-only Azure SAS |
+| DBX&#95;PEAKGEAR&#95;OAUTH | Obtain renewable Unity Catalog access tokens | Databricks OAuth client |
 
 Keep the supplied names exactly. Review the form, then save each credential.
-The credentials are owned by `PEAKGEAR_USER`. Do not create them as `ADMIN`.
+The credentials are owned by PEAKGEAR&#95;USER. Do not create them as `ADMIN`.
 
-![Create the `ADLS_PEAKGEAR_DATA` Azure credential. The password field is masked.](images/create-azure-storage-credential.png)
+![Create the ADLS&#95;PEAKGEAR&#95;DATA Azure credential. The password field is masked.](images/create-azure-storage-credential.png)
 
 ## Task 2: Mount the Databricks Unity Catalog
 
@@ -53,10 +53,10 @@ Enter:
 
 | Field | Value |
 |---|---|
-| Local catalog name | `DBX_UNITY_PEAKGEAR` |
+| Local catalog name | DBX&#95;UNITY&#95;PEAKGEAR |
 | Catalog type | Databricks Unity / Iceberg REST |
-| Catalog credential | `DBX_PEAKGEAR_OAUTH` |
-| Data storage credential | `ADLS_PEAKGEAR_DATA` |
+| Catalog credential | DBX&#95;PEAKGEAR&#95;OAUTH |
+| Data storage credential | ADLS&#95;PEAKGEAR&#95;DATA |
 | Catalog endpoint | The Unity Iceberg REST endpoint from the private handout |
 
 ![Enter the local catalog name, select Unity, enter the endpoint, and select the Azure bucket credential. The workspace endpoint is intentionally redacted.](images/mount-iceberg-catalog.png)
@@ -64,18 +64,18 @@ Enter:
 When **Iceberg catalog credentials** is required, click the plus sign and
 create the OAuth credential with the values from the private handout.
 
-![Create `DBX_PEAKGEAR_OAUTH`. The workspace endpoint and client ID are redacted; the client secret remains masked.](images/create-iceberg-catalog-credential.png)
+![Create DBX&#95;PEAKGEAR&#95;OAUTH. The workspace endpoint and client ID are redacted; the client secret remains masked.](images/create-iceberg-catalog-credential.png)
 
-Return to the catalog form, select `DBX_PEAKGEAR_OAUTH`, save the mount, and
+Return to the catalog form, select DBX&#95;PEAKGEAR&#95;OAUTH, save the mount, and
 refresh its catalog metadata. The catalog must expose the `ICEBERG` schema with
-`PRODUCTS` and `DIGITAL_CLICKSTREAM_EVENTS`.
+`PRODUCTS` and DIGITAL&#95;CLICKSTREAM&#95;EVENTS.
 
-![The successful `DBX_UNITY_PEAKGEAR` mount exposes the two PeakGear Iceberg tables.](images/connected-iceberg-tables.png)
+![The successful DBX&#95;UNITY&#95;PEAKGEAR mount exposes the two PeakGear Iceberg tables.](images/connected-iceberg-tables.png)
 
 ## Task 3: Add the Lake Cache policy
 
 Immediately after the mount, create and populate a Lake Cache policy for both
-mounted tables. Run the following in SQL Worksheet as `PEAKGEAR_USER`. If the
+mounted tables. Run the following in SQL Worksheet as PEAKGEAR&#95;USER. If the
 inspection query already shows a policy, verify it instead of recreating it.
 
 ~~~sql
@@ -123,7 +123,7 @@ END;
 /
 ~~~
 
-Run the inspection query again. `CACHE_CUR_SIZE` greater than zero proves that
+Run the inspection query again. CACHE&#95;CUR&#95;SIZE greater than zero proves that
 files were populated. It does not prove that an enabled cache is correct or
 faster. In the current lab environment, keep a disabled policy disabled if it
 reports the known duplicate-read behavior. Do not claim acceleration without a
@@ -135,7 +135,7 @@ verified query plan and runtime comparison.
 
 ## Task 4: Prove the two live sources
 
-Open SQL Worksheet as `PEAKGEAR_USER` and run:
+Open SQL Worksheet as PEAKGEAR&#95;USER and run:
 
 ~~~sql
 SELECT COUNT(*) AS products
@@ -174,13 +174,13 @@ FROM customer_return_events@peakgear_operations_link;
 ~~~
 
 These views do not copy data and do not add business definitions. They give
-`PEAKGEAR_USER` a small, owned surface for Data Studio and the bounded MCP
+PEAKGEAR&#95;USER a small, owned surface for Data Studio and the bounded MCP
 server.
 
 ### Checkpoint
 
 You can read both Iceberg tables and the Operations return table. The three
-The raw lab views exist under `PEAKGEAR_USER`.
+The raw lab views exist under PEAKGEAR&#95;USER.
 
 ## Learn More
 

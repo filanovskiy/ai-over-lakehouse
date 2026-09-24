@@ -18,28 +18,28 @@ In this lab, you will:
 
 ## Task 1: Enrich the product catalog
 
-In **Catalog**, open `LAB_PRODUCTS_RAW_V` and run **AI Enrichment**. Review and
+In **Catalog**, open LAB&#95;PRODUCTS&#95;RAW&#95;V and run **AI Enrichment**. Review and
 save these business definitions:
 
 | Object | Description | Tags |
 |---|---|---|
-| View | One row per product. Conformed catalog shared by digital intent and returns. Category rolls up product. | `product_catalog`, `conformed_dimension`, `category_hierarchy` |
-| `PRODUCT_ID` | Shared product join key. | `product_key`, `join_key` |
-| `PRODUCT_NAME` | Business-facing product name. | `product_name` |
-| `CATEGORY_NAME` | Category used to aggregate products. | `category`, `hierarchy_level` |
+| View | One row per product. Conformed catalog shared by digital intent and returns. Category rolls up product. | product&#95;catalog, conformed&#95;dimension, category&#95;hierarchy |
+| PRODUCT&#95;ID | Shared product join key. | product&#95;key, join&#95;key |
+| PRODUCT&#95;NAME | Business-facing product name. | product&#95;name |
+| CATEGORY&#95;NAME | Category used to aggregate products. | category, hierarchy&#95;level |
 
 ## Task 2: Enrich operational returns
 
-In **Catalog**, open `LAB_RETURNS_RAW_V` and run **AI Enrichment**. Review and
+In **Catalog**, open LAB&#95;RETURNS&#95;RAW&#95;V and run **AI Enrichment**. Review and
 save these business definitions:
 
 | Object | Description | Tags |
 |---|---|---|
-| View | One operational return event by product, store and timestamp. Aggregate separately before comparing with digital popularity. Returns are a quality context, not a rate. | `returns`, `quality_signal`, `operational_data`, `no_return_rate` |
-| `PRODUCT_ID` | Product join key. Join to `LAB_PRODUCTS_RAW_V.PRODUCT_ID`. | `product_key`, `join_key` |
-| `STORE_ID` | Store identifier for returns analysis. | `store_key`, `join_key` |
-| `RETURN_QTY` | Additive number of returned units. Default aggregation is `SUM`. | `measure`, `units`, `additive`, `sum` |
-| `RETURN_CREATED_AT` | Timestamp when the return was recorded. Derive calendar month from it. | `event_timestamp`, `time_key` |
+| View | One operational return event by product, store and timestamp. Aggregate separately before comparing with digital popularity. Returns are a quality context, not a rate. | `returns`, quality&#95;signal, operational&#95;data, no&#95;return&#95;rate |
+| PRODUCT&#95;ID | Product join key. Join to LAB&#95;PRODUCTS&#95;RAW&#95;V.PRODUCT&#95;ID. | product&#95;key, join&#95;key |
+| STORE&#95;ID | Store identifier for returns analysis. | store&#95;key, join&#95;key |
+| RETURN&#95;QTY | Additive number of returned units. Default aggregation is `SUM`. | `measure`, `units`, `additive`, `sum` |
+| RETURN&#95;CREATED&#95;AT | Timestamp when the return was recorded. Derive calendar month from it. | event&#95;timestamp, time&#95;key |
 
 Save both objects.
 

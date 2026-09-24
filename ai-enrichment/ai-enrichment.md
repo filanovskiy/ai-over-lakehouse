@@ -23,13 +23,13 @@ The default AI profile is already prepared. Do **not** create, select, edit, or
 validate a profile.
 
 1. Open **Catalog**.
-2. Open the `PEAKGEAR_USER` schema, then **Views**.
-3. Select `LAB_DIGITAL_INTENT_RAW_V`.
+2. Open the PEAKGEAR&#95;USER schema, then **Views**.
+3. Select LAB&#95;DIGITAL&#95;INTENT&#95;RAW&#95;V.
 4. Click **AI Enrichment**.
 5. Wait briefly for editable fields. AI-generated text is a suggestion, not a
    source of truth.
 
-![Open the `LAB_DIGITAL_INTENT_RAW_V` overview and click AI Enrichment.](images/ai-enrichment-entry.png)
+![Open the LAB&#95;DIGITAL&#95;INTENT&#95;RAW&#95;V overview and click AI Enrichment.](images/ai-enrichment-entry.png)
 
 ![AI Enrichment generates an initial description and tags. Review them; they are suggestions, not the final business contract.](images/ai-enrichment-review.png)
 
@@ -54,10 +54,10 @@ Set these column descriptions and tags:
 
 | Column | Description | Tags |
 |---|---|---|
-| `PRODUCT_ID` | Business product identifier. Join key to `LAB_PRODUCTS_RAW_V.PRODUCT_ID`; it is not a measure. | `product_key`, `join_key` |
-| `SESSION_ID` | Browsing-session identifier. It is not a customer identifier or additive measure. | `session_identifier` |
-| `CUSTOMER_ID` | Customer identifier associated with the event. Row count is not a count of unique customers. | `customer_identifier` |
-| `EVENT_TS` | Timestamp of the interaction. Use it to derive the latest completed calendar month. | `event_timestamp`, `time_key` |
+| PRODUCT&#95;ID | Business product identifier. Join key to LAB&#95;PRODUCTS&#95;RAW&#95;V.PRODUCT&#95;ID; it is not a measure. | product&#95;key, join&#95;key |
+| SESSION&#95;ID | Browsing-session identifier. It is not a customer identifier or additive measure. | session&#95;identifier |
+| CUSTOMER&#95;ID | Customer identifier associated with the event. Row count is not a count of unique customers. | customer&#95;identifier |
+| EVENT&#95;TS | Timestamp of the interaction. Use it to derive the latest completed calendar month. | event&#95;timestamp, time&#95;key |
 
 Turn on **Show code** only to review what Data Studio will save. The point is
 not to copy generated SQL: click **Save** only after the description and tags
@@ -100,7 +100,7 @@ Which products are customers interested in right now?
 ~~~
 
 Expected result: Codex uses the saved contract to calculate the latest-month
-digital-event ranking. It can join to `LAB_PRODUCTS_RAW_V` only to present the
+digital-event ranking. It can join to LAB&#95;PRODUCTS&#95;RAW&#95;V only to present the
 corresponding business-facing product names; that lookup does not change the
 metric, time window, or result grain.
 
@@ -111,7 +111,7 @@ the definition, time period, and result grain are now saved in Data Studio.
 
 ### Checkpoint
 
-`LAB_DIGITAL_INTENT_RAW_V` has saved `DESCRIPTION` and `TAGS` annotations, and Codex
+LAB&#95;DIGITAL&#95;INTENT&#95;RAW&#95;V has saved `DESCRIPTION` and `TAGS` annotations, and Codex
 has answered the same question with the defined metric, time window, and
 product grain.
 
