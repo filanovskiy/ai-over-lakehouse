@@ -25,8 +25,8 @@ In this lab, you will:
 
 ## Task 1: Set up LiveLab MCP
 
-1. Download and unzip the provided PeakGear starter kit.
-2. In Finder, double-click **01-setup-peakgear-mcp.command**.
+1. Download [PeakGear LiveLab starter kit (.zip)](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/downloads/PeakGear-LiveLab-Starter-Kit.zip), then unzip it. Keep the extracted `starter-kit` folder intact.
+2. In Finder, double-click [01-setup-peakgear-mcp.command](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/01-setup-peakgear-mcp.command).
 3. Paste the Lab Data Studio URL when asked.
 4. Enter the PEAKGEAR_USER password at the hidden password prompt.
 5. Choose the current Codex project folder when Finder opens.
@@ -37,6 +37,8 @@ In this lab, you will:
 
 The setup stores the password in the local macOS Keychain. It does not put the
 password, an OAuth token, or a credential in a project file.
+
+> The individual [01 setup](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/01-setup-peakgear-mcp.command) and [02 recovery](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/02-peakgear-livelab-admin.command) links are provided for re-download only. Do not run `01` as a standalone download: it requires the other files in the unzipped `starter-kit` folder.
 
 ## Task 2: Establish the MCP boundary
 
@@ -70,8 +72,9 @@ non-secret response shows:
 | session_ready | true |
 | query_result_adapter | peakgear-json-bound-rows-v1 |
 
-If the check fails, run the starter kit's **02-peakgear-livelab-admin.command**,
-choose **Start LiveLab cleanly**, and create a new Codex task.
+If the check fails, run the starter kit's
+[02-peakgear-livelab-admin.command](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/02-peakgear-livelab-admin.command), choose
+**Start LiveLab cleanly**, and create a new Codex task.
 
 ## Task 3: Ask the raw-data question
 
