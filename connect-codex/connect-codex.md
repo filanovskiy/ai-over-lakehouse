@@ -14,21 +14,21 @@ is not a ranking: raw fields alone do not define what customer interest means.
 In this lab, you will:
 
 * connect a clean laptop to the prepared Data Studio environment;
-* prove the MCP session is connected as PEAKGEAR_USER; and
+* prove the MCP session is connected as `PEAKGEAR_USER`; and
 * see Codex stop rather than invent a business definition.
 
 ### Prerequisites
 
 * Labs 1 through 3 are complete.
 * Codex Desktop is installed and signed in.
-* You have the Lab Data Studio URL and the PEAKGEAR_USER password.
+* You have the Lab Data Studio URL and the `PEAKGEAR_USER` password.
 
 ## Task 1: Set up LiveLab MCP
 
 1. Download [PeakGear LiveLab starter kit (.zip)](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/downloads/PeakGear-LiveLab-Starter-Kit.zip), then unzip it. Keep the extracted `starter-kit` folder intact.
 2. In Finder, double-click [01-setup-peakgear-mcp.command](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/01-setup-peakgear-mcp.command).
 3. Paste the Lab Data Studio URL when asked.
-4. Enter the PEAKGEAR_USER password at the hidden password prompt.
+4. Enter the `PEAKGEAR_USER` password at the hidden password prompt.
 5. Choose the current Codex project folder when Finder opens.
 6. When setup reports **Success**, open that project in Codex and click
    **Trust** if prompted.
@@ -62,15 +62,15 @@ question. If required business meaning is missing, state exactly what is
 missing instead of making an assumption.
 ~~~
 
-The first tool call must be **adp_get_connection_info**. Continue only if its
+The first tool call must be **`adp_get_connection_info`**. Continue only if its
 non-secret response shows:
 
 | Field | Required value |
 |---|---|
 | service | ADP |
-| adp_user | PEAKGEAR_USER |
-| session_ready | true |
-| query_result_adapter | peakgear-json-bound-rows-v1 |
+| `adp_user` | `PEAKGEAR_USER` |
+| `session_ready` | `true` |
+| `query_result_adapter` | `peakgear-json-bound-rows-v1` |
 
 If the check fails, run the starter kit's
 [02-peakgear-livelab-admin.command](https://github.com/filanovskiy/ai-over-lakehouse/raw/refs/heads/main/starter-kit/02-peakgear-livelab-admin.command), choose
@@ -85,7 +85,7 @@ Which products are customers interested in right now?
 ~~~
 
 Expected result: Codex should explain why it cannot responsibly answer yet. In
-particular, LAB_DIGITAL_INTENT_RAW_V does not define:
+particular, `LAB_DIGITAL_INTENT_RAW_V` does not define:
 
 * whether interest means events, sessions, or customers;
 * the grain of one row;
@@ -99,7 +99,7 @@ list at this stage is the wrong outcome.
 
 ### Checkpoint
 
-Codex has proven its PEAKGEAR_USER MCP session and has made a controlled stop
+Codex has proven its `PEAKGEAR_USER` MCP session and has made a controlled stop
 for the raw question.
 
 ## Learn More

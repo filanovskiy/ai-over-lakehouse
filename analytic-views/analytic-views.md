@@ -8,8 +8,8 @@ The business question now has reviewed source semantics, but it needs a
 reusable governed model. Codex will use the LiveLab MCP server to create and
 validate two Analytic Views:
 
-* LAB_DIGITAL_POPULARITY_AV for digital events by time, category, and product.
-* LAB_RETURNS_AV for returned units by time, category, product, and store.
+* `LAB_DIGITAL_POPULARITY_AV` for digital events by time, category, and product.
+* `LAB_RETURNS_AV` for returned units by time, category, product, and store.
 
 The participant does not paste complex Analytic View DDL. Codex creates the
 model from the saved Data Studio definitions and validates it before answering.
@@ -72,7 +72,7 @@ completed-month window and the measures used:
 
 ### Checkpoint
 
-LAB_DIGITAL_POPULARITY_AV and LAB_RETURNS_AV are valid, and Codex can answer
+`LAB_DIGITAL_POPULARITY_AV` and `LAB_RETURNS_AV` are valid, and Codex can answer
 the final question through their governed hierarchy and measures.
 
 ## Summary

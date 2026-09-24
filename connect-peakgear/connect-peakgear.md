@@ -1,10 +1,10 @@
-# Lab 2: Sign in as PEAKGEAR_USER
+# Lab 2: Sign in as `PEAKGEAR_USER`
 
 Estimated Time: 5 minutes
 
 ## Introduction
 
-The rest of the workshop is performed as PEAKGEAR_USER. This boundary matters:
+The rest of the workshop is performed as `PEAKGEAR_USER`. This boundary matters:
 the user owns the Data Studio metadata, the Unity catalog mount, the Lake Cache
 policy, the raw views, and the Analytic Views. ADMIN owns only the shared
 infrastructure prepared in Lab 1.
@@ -13,14 +13,14 @@ infrastructure prepared in Lab 1.
 
 In this lab, you will:
 
-* start a fresh PEAKGEAR_USER session; and
+* start a fresh `PEAKGEAR_USER` session; and
 * confirm that Data Studio and the default AI profile are ready.
 
 ## Task 1: Sign in again
 
 1. Sign out of the ADMIN Data Studio session.
 2. Open the Lab Data Studio URL copied in Lab 1.
-3. Sign in as PEAKGEAR_USER with the private lab password.
+3. Sign in as `PEAKGEAR_USER` with the private lab password.
 4. Open **SQL Worksheet**.
 
 Run:
@@ -31,7 +31,7 @@ SELECT USER AS database_user,
 FROM dual;
 ~~~
 
-Both values must be PEAKGEAR_USER.
+Both values must be `PEAKGEAR_USER`.
 
 ## Task 2: Confirm the prepared AI capability
 
@@ -49,7 +49,7 @@ remain for optional OCI workflows and is not this lab's acceptance check.
 
 ### Checkpoint
 
-You are working as PEAKGEAR_USER in a new database session and can see
+You are working as `PEAKGEAR_USER` in a new database session and can see
 **AI Profile ready**.
 
 ## Learn More
