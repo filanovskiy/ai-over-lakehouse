@@ -23,14 +23,16 @@ an AI profile.
 
 ## Local preview
 
-From this folder, run:
+Run the server **from the workshop directory**, not from your home directory:
 
 ```sh
+cd /path/to/ai-over-lakehouse
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000/workshops/sandbox/`. The standard LiveLabs loader
-requires internet access. Stop the server with Control-C.
+Then open `http://localhost:8000/workshops/sandbox/`. A `404` at that URL
+means the server was started from the wrong directory. The standard LiveLabs
+loader requires internet access. Stop the server with Control-C.
 
 ## Publication boundary
 
